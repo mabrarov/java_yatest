@@ -6,7 +6,7 @@
     <version>0.0.1-SNAPSHOT</version>
 
     <scm>
-        <connection>scm:git:git@github.com:mabrarov/yatest.git</connection>
+        <connection>scm:git:git@github.com:mabrarov/java_yatest.git</connection>
     </scm>
 
     <properties>
