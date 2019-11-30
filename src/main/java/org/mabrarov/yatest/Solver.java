@@ -7,7 +7,7 @@ import java.util.function.BiConsumer;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-class Solver {
+public final class Solver {
 
   private static class Item {
 
@@ -25,14 +25,14 @@ class Solver {
     }
   }
 
-  static String rle(final String str) {
+  public static String rle(final String str) {
     if (str == null || str.isEmpty()) {
       return "";
     }
     return rle(str.chars().parallel());
   }
 
-  static String rle(final IntStream stream) {
+  private static String rle(final IntStream stream) {
     return stream.collect(ArrayList::new, (items, character) -> {
       if (character < 'A' || 'Z' < character) {
         throw new IllegalArgumentException("Found \"" + (char) character + "\"");
