@@ -1,49 +1,73 @@
 package org.mabrarov.yatest;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+import java.util.function.BiConsumer;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+
 class Solver {
+
+  private static class Item {
+
+    final char character;
+    int count;
+
+    Item(final int character) {
+      this.character = (char) character;
+      count = 1;
+    }
+
+    @Override
+    public String toString() {
+      return count < 2 ? Character.toString(character) : Character.toString(character) + count;
+    }
+  }
 
   static String rle(final String str) {
     if (str == null || str.isEmpty()) {
       return "";
     }
-    final int length = str.length();
-    // Result is at most as long as input str
-    final StringBuilder builder = new StringBuilder(length);
-    char prevChar = 0;
-    int prevCharCount = 0;
-    for (int i = 0; i < length; ++i) {
-      final char currentChar = str.charAt(i);
-      // Validate: str should consist of A-Z symbols only
-      if (currentChar < 'A' || 'Z' < currentChar) {
-        throw new IllegalArgumentException("Invalid char \"" + currentChar + "\" at " + i);
+    return rle(str.chars().parallel());
+  }
+
+  static String rle(final IntStream stream) {
+    return stream.collect(ArrayList::new, (items, character) -> {
+      if (character < 'A' || 'Z' < character) {
+        throw new IllegalArgumentException("Found \"" + (char) character + "\"");
       }
-      // First char should be handled separately
-      if (builder.length() == 0) {
-        builder.append(currentChar);
-        prevChar = currentChar;
-        prevCharCount = 1;
-        continue;
+      if (items.isEmpty()) {
+        items.add(new Item(character));
+      } else {
+        final Item lastItem = lastItem(items);
+        if (lastItem.character == character) {
+          ++lastItem.count;
+        } else {
+          items.add(new Item(character));
+        }
       }
-      // Handling of subsequent char when there is previous char
-      if (currentChar == prevChar) {
-        // Found duplicate
-        ++prevCharCount;
-        continue;
+    }, (BiConsumer<List<Item>, List<Item>>) (left, right) -> {
+      if (left.isEmpty()) {
+        left.addAll(right);
+      } else if (!right.isEmpty()) {
+        final Item leftLastItem = lastItem(left);
+        final Item rightFirstItem = firstItem(right);
+        if (leftLastItem.character != rightFirstItem.character) {
+          left.addAll(right);
+        } else {
+          leftLastItem.count += rightFirstItem.count;
+          left.addAll(right.subList(1, right.size()));
+        }
       }
-      // Found new char. First complete handling of previous char
-      if (prevCharCount > 1) {
-        // Store number of chars only if it's greater than one
-        builder.append(prevCharCount);
-      }
-      // Handle new char
-      builder.append(currentChar);
-      prevChar = currentChar;
-      prevCharCount = 1;
-    }
-    // Complete handling of last char
-    if (prevCharCount > 1) {
-      builder.append(prevCharCount);
-    }
-    return builder.toString();
+    }).stream().map(Objects::toString).collect(Collectors.joining());
+  }
+
+  private static <T> T lastItem(final List<T> list) {
+    return list.listIterator(list.size()).previous();
+  }
+
+  private static <T> T firstItem(final List<T> list) {
+    return list.iterator().next();
   }
 }
