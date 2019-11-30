@@ -1,8 +1,12 @@
 package org.mabrarov.yatest;
 
-class Solver {
+public final class Solver {
 
-  static String rle(final String str) {
+  private Solver() {
+    throw new AssertionError("Utility class should not be instantiated");
+  }
+
+  public static String rle(final String str) {
     if (str == null || str.isEmpty()) {
       return "";
     }
