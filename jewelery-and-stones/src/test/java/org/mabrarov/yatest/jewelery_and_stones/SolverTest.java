@@ -22,6 +22,16 @@ import org.junit.Test;
 
 public final class SolverTest {
 
+  @Test(expected = IllegalArgumentException.class)
+  public void test_invalid_jewellery_exception() {
+    countStoneJewellery("aabcadefagRbn", "zwwaaybb");
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void test_invalid_stone_exception() {
+    countStoneJewellery("aabcadefagbn", "zwwa|aybb");
+  }
+
   @Test
   public void test_null_jewellery_zero() {
     assertEquals(0, countStoneJewellery(null, "abc"));
