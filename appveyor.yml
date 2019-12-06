@@ -33,7 +33,11 @@ after_build:
 test: false
 
 artifacts:
-  - path: target\*.jar
-    name: JAR
-  - path: target\*.exec
-    name: JaCoCo stats
+  - path: 'rle\target\*.jar'
+    name: 'RLE JAR'
+  - path: 'rle\target\*.exec'
+    name: 'RLE JaCoCo stats'
+  - path: 'jewelery-and-stones\target\*.jar'
+    name: 'Jewelery & Stones JAR'
+  - path: 'jewelery-and-stones\target\*.exec'
+    name: 'Jewelery & Stones JaCoCo stats'
