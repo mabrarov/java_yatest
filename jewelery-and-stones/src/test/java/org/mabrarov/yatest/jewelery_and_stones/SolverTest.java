@@ -37,4 +37,39 @@ public final class SolverTest {
     assertEquals(0, countStoneJewellery(null, null));
   }
 
+  @Test
+  public void test_empty_jewellery_zero() {
+    assertEquals(0, countStoneJewellery("", "abc"));
+  }
+
+  @Test
+  public void test_empty_stones_zero() {
+    assertEquals(0, countStoneJewellery("abc", ""));
+  }
+
+  @Test
+  public void test_empty_jewellery_and_empty_stones_zero() {
+    assertEquals(0, countStoneJewellery("", ""));
+  }
+
+  @Test
+  public void test_single_jewellery_and_different_stones_zero() {
+    assertEquals(0, countStoneJewellery("a", "bcd"));
+  }
+
+  @Test
+  public void test_single_stone_and_different_jewellery_zero() {
+    assertEquals(0, countStoneJewellery("bcd", "a"));
+  }
+
+  @Test
+  public void test_jewellery_intersect_one_stone_non_zero() {
+    assertEquals(1, countStoneJewellery("abcdefg", "zwway"));
+  }
+
+  @Test
+  public void test_duplicate_jewellery_intersect_duplicate_stones_non_zero() {
+    assertEquals(4, countStoneJewellery("aabcadefagbn", "zwwaaybb"));
+  }
+
 }
