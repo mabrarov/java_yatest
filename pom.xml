@@ -14,6 +14,7 @@
         <module>rle</module>
         <module>jewelery-and-stones</module>
         <module>max-sequence-len</module>
+        <module>deduplicate</module>
         <module>robot</module>
     </modules>
 
