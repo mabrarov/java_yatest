@@ -15,10 +15,21 @@
  */
 package org.mabrarov.yatest.jewelery_and_stones;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 public class Main {
 
-  public static void main(String[] args) {
-    //TODO
+  public static void main(String[] args) throws IOException {
+    final String jewellery;
+    final String stones;
+    try (final InputStreamReader inputStream = new InputStreamReader(
+        System.in); final BufferedReader reader = new BufferedReader(inputStream)) {
+      jewellery = reader.readLine();
+      stones = reader.readLine();
+    }
+    System.out.println(Solver.countStoneJewellery(jewellery, stones));
   }
 
 }
