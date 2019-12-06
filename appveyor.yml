@@ -41,3 +41,7 @@ artifacts:
     name: 'Jewelery & Stones JAR'
   - path: 'jewelery-and-stones\target\*.exec'
     name: 'Jewelery & Stones JaCoCo stats'
+  - path: 'max-sequence-len\target\*.jar'
+    name: 'Max Sequence Length JAR'
+  - path: 'max-sequence-len\target\*.exec'
+    name: 'Max Sequence Length JaCoCo stats'
