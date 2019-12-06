@@ -23,62 +23,62 @@ import org.junit.Test;
 public final class SolverTest {
 
   @Test(expected = IllegalArgumentException.class)
-  public void test_invalid_jewellery_exception() {
+  public void test_invalidJewellery_exception() {
     countStoneJewellery("aabcadefagRbn", "zwwaaybb");
   }
 
   @Test(expected = IllegalArgumentException.class)
-  public void test_invalid_stone_exception() {
+  public void test_invalidStone_exception() {
     countStoneJewellery("aabcadefagbn", "zwwa|aybb");
   }
 
   @Test
-  public void test_null_jewellery_zero() {
+  public void test_nullJewellery_zero() {
     assertEquals(0, countStoneJewellery(null, "abc"));
   }
 
   @Test
-  public void test_null_stones_zero() {
+  public void test_nullStones_zero() {
     assertEquals(0, countStoneJewellery("abc", null));
   }
 
   @Test
-  public void test_null_jewellery_and_null_stones_zero() {
+  public void test_nullJewelleryAndNullStones_zero() {
     assertEquals(0, countStoneJewellery(null, null));
   }
 
   @Test
-  public void test_empty_jewellery_zero() {
+  public void test_emptyJewellery_zero() {
     assertEquals(0, countStoneJewellery("", "abc"));
   }
 
   @Test
-  public void test_empty_stones_zero() {
+  public void test_emptyStones_zero() {
     assertEquals(0, countStoneJewellery("abc", ""));
   }
 
   @Test
-  public void test_empty_jewellery_and_empty_stones_zero() {
+  public void test_emptyJewelleryAndEmptyStones_zero() {
     assertEquals(0, countStoneJewellery("", ""));
   }
 
   @Test
-  public void test_single_jewellery_and_different_stones_zero() {
+  public void test_singleJewelleryAndDifferentStones_zero() {
     assertEquals(0, countStoneJewellery("a", "bcd"));
   }
 
   @Test
-  public void test_single_stone_and_different_jewellery_zero() {
+  public void test_singleStoneAndDifferentJewellery_zero() {
     assertEquals(0, countStoneJewellery("bcd", "a"));
   }
 
   @Test
-  public void test_jewellery_intersect_one_stone_non_zero() {
+  public void test_jewelleryIntersectOneStone_non_zero() {
     assertEquals(1, countStoneJewellery("abcdefg", "zwway"));
   }
 
   @Test
-  public void test_duplicate_jewellery_intersect_duplicate_stones_non_zero() {
+  public void test_duplicateJewelleryIntersectDuplicateStones_non_zero() {
     assertEquals(4, countStoneJewellery("aabcadefagbn", "zwwaaybb"));
   }
 
