@@ -20,6 +20,8 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
+        <jacoco.merge.directory>${project.basedir}</jacoco.merge.directory>
+        <jacoco.merge.include>**/*.exec</jacoco.merge.include>
     </properties>
 
     <dependencyManagement>
@@ -76,6 +78,16 @@
                     <groupId>org.jacoco</groupId>
                     <artifactId>jacoco-maven-plugin</artifactId>
                     <version>0.8.4</version>
+                    <configuration>
+                        <fileSets>
+                            <fileSet>
+                                <directory>${jacoco.merge.directory}</directory>
+                                <includes>
+                                    <include>${jacoco.merge.include}</include>
+                                </includes>
+                            </fileSet>
+                        </fileSets>
+                    </configuration>
                 </plugin>
             </plugins>
         </pluginManagement>
