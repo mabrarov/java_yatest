@@ -13,6 +13,7 @@
     <modules>
         <module>rle</module>
         <module>jewelery-and-stones</module>
+        <module>robot</module>
     </modules>
 
     <properties>
