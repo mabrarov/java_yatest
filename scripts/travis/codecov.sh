@@ -12,7 +12,8 @@ if [[ "${COVERAGE_BUILD}" -ne 0 ]]; then
   travis_retry codecov \
     --required \
     --token "${CODECOV_TOKEN}" \
-    --file "${rle_codecov_coverage_file}" \
-    --file "${jewellery_and_stones_codecov_coverage_file}" \
+    --file \
+    "${rle_codecov_coverage_file}" \
+    "${jewellery_and_stones_codecov_coverage_file}" \
     --root "${TRAVIS_BUILD_DIR}" -X gcov
 fi
