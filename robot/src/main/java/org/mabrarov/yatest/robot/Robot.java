@@ -32,7 +32,9 @@ class Foot implements Runnable {
   public void run() {
     for (; ; ) {
       try {
+        mayStep.acquire();
         step();
+        stepMade.release();
       } catch (InterruptedException ignored) {
         Thread.currentThread().interrupt();
         break;
@@ -40,10 +42,8 @@ class Foot implements Runnable {
     }
   }
 
-  private void step() throws InterruptedException {
-    mayStep.acquire();
+  private void step() {
     System.out.println("Step by " + name);
-    stepMade.release();
   }
 }
 
@@ -55,6 +55,5 @@ public class Robot {
     final Semaphore rightStepMade = new Semaphore(0);
     new Thread(new Foot("left", rightStepMade, leftStepMade)).start();
     new Thread(new Foot("right", leftStepMade, rightStepMade)).start();
-
   }
 }
