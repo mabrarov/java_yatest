@@ -32,4 +32,4 @@ mvnw.cmd clean package
 Refer to
 
 1. [rle/README.md](rle/README.md)
-1. [jewelery_and_stones/README.md](jewelery_and_stones/README.md)
+1. [jewelery-and-stones/README.md](jewelery-and-stones/README.md)
