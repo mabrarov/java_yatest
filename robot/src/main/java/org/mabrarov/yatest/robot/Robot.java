@@ -19,14 +19,14 @@ import java.util.concurrent.Semaphore;
 
 class Foot implements Runnable {
 
-  private final Semaphore mayStepSemaphore;
-  private final Semaphore stepMadeSemaphore;
+  private final Semaphore mayStep;
+  private final Semaphore stepMade;
   private final String name;
 
-  public Foot(String name, Semaphore mayStepSemaphore, Semaphore stepMadeSemaphore) {
+  public Foot(String name, Semaphore mayStep, Semaphore stepMade) {
     this.name = name;
-    this.mayStepSemaphore = mayStepSemaphore;
-    this.stepMadeSemaphore = stepMadeSemaphore;
+    this.mayStep = mayStep;
+    this.stepMade = stepMade;
   }
 
   public void run() {
@@ -41,9 +41,9 @@ class Foot implements Runnable {
   }
 
   private void step() throws InterruptedException {
-    mayStepSemaphore.acquire();
+    mayStep.acquire();
     System.out.println("Step by " + name);
-    stepMadeSemaphore.release();
+    stepMade.release();
   }
 }
 
