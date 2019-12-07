@@ -16,6 +16,7 @@
         <module>max-sequence-len</module>
         <module>deduplicate</module>
         <module>bracket-builder</module>
+        <module>anagram</module>
         <module>robot</module>
     </modules>
 

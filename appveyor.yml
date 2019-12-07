@@ -57,3 +57,7 @@ artifacts:
     name: 'Bracket Sequence Builder JAR'
   - path: 'bracket-builder\target\*.exec'
     name: 'Bracket Sequence Builder JaCoCo stats'
+  - path: 'anagram\target\*.jar'
+    name: 'Anagram JAR'
+  - path: 'anagram\target\*.exec'
+    name: 'Anagram JaCoCo stats'
