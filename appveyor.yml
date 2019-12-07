@@ -53,3 +53,7 @@ artifacts:
     name: 'Robot JAR'
   - path: 'robot\target\*.exec'
     name: 'Robot JaCoCo stats'
+  - path: 'bracket-builder\target\*.jar'
+    name: 'Bracket Sequence Builder JAR'
+  - path: 'bracket-builder\target\*.exec'
+    name: 'Bracket Sequence Builder JaCoCo stats'

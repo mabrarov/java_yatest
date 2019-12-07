@@ -36,3 +36,4 @@ Refer to
 1. [robot/README.md](robot/README.md)
 1. [max-sequence-len/README.md](max-sequence-len/README.md)
 1. [deduplicate/README.md](deduplicate/README.md)
+1. [bracket-builder/README.md](bracket-builder/README.md)
