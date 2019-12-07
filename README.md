@@ -37,3 +37,5 @@ Refer to
 1. [max-sequence-len/README.md](max-sequence-len/README.md)
 1. [deduplicate/README.md](deduplicate/README.md)
 1. [bracket-builder/README.md](bracket-builder/README.md)
+1. [anagram/README.md](anagram/README.md)
+1. [list-merge/README.md](list-merge/README.md)

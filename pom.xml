@@ -17,6 +17,7 @@
         <module>deduplicate</module>
         <module>bracket-builder</module>
         <module>anagram</module>
+        <module>list-merge</module>
         <module>robot</module>
     </modules>
 

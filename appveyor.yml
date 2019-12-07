@@ -61,3 +61,7 @@ artifacts:
     name: 'Anagram JAR'
   - path: 'anagram\target\*.exec'
     name: 'Anagram JaCoCo stats'
+  - path: 'list-merge\target\*.jar'
+    name: 'List Merge JAR'
+  - path: 'list-merge\target\*.exec'
+    name: 'List Merge JaCoCo stats'
