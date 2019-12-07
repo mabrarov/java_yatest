@@ -1,6 +1,6 @@
 # List Merge
 
-Merges sorted in nin-decreasing order lists of \[0, 100\] integers into a single list.
+Merges multiple lists sorted in non-decreasing order into a single list sorted in non-decreasing order.
 
 Conditions
 
@@ -9,7 +9,8 @@ Conditions
 1. Second and subsequent lines of input are considered lists to merge,
    each list starts from an integer in \[0, 10 * number-of-lists\] representing size of list,
    then items of list are following, items of list may be separated with whitespaces or new line
-1. Items of each list should be given in non-descending order
+1. Items of each list should be given in non-descending order,
+   each item should be an integer in \[0, 100\]
 1. Input is taken from standard input stream
 1. Output is the merged list consisting of items of all input lists in non-descending order, 
    items are separated with space
