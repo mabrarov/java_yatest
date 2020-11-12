@@ -1,7 +1,7 @@
 # Java Test
 
 [![License](https://img.shields.io/github/license/mabrarov/java_yatest)](https://github.com/mabrarov/java_yatest/tree/master/LICENSE)
-[![Travis CI build status](https://travis-ci.org/mabrarov/java_yatest.svg?branch=master)](https://travis-ci.org/mabrarov/java_yatest)
+[![Travis CI build status](https://travis-ci.com/mabrarov/java_yatest.svg?branch=master)](https://travis-ci.com/mabrarov/java_yatest)
 [![AppVeyor CI build status](https://ci.appveyor.com/api/projects/status/t24dxibxfm259dfi/branch/master?svg=true)](https://ci.appveyor.com/project/mabrarov/java-yatest/branch/master)
 [![Code coverage status](https://codecov.io/gh/mabrarov/java_yatest/branch/master/graph/badge.svg)](https://codecov.io/gh/mabrarov/java_yatest/branch/master)
 
